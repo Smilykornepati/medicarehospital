@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Lakshmi Vijaya Medicare Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #f4e4d6;
+            --secondary-color: #e8d5c4;
+            --accent-color: #d4b896;
+            --text-dark: #5a4a3a;
+            --text-light: #8b7355;
+            --white: #ffffff;
+            --cream: #faf8f5;
+            --soft-pink: #f9f2ed;
+            --warm-beige: #ede0d3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(244, 228, 214, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+        }
+
+        .logo h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--primary-color) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-section {
+            padding: 6rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .contact-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 15px;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 184, 150, 0.15);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .contact-form h3 {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            background: var(--soft-pink);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .emergency-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .emergency-card h3 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-card p {
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-section a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(90, 74, 58, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-form,
+            .contact-info {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/logo.jpeg" alt="Lakshmi Vijaya Medicare Hospital">
+                <h1>Lakshmi Vijaya Medicare</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button" onclick="window.location.href='contact.html'">Schedule Visit</button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Get in touch for appointments and inquiries</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>Tagarapuvalasa, Visakhapatnam<br>Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>Emergency: 24/7 Available<br>General: Call for appointments</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h4>Hours</h4>
+                            <p>24/7 Emergency Services<br>Regular OPD: 9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🏥</div>
+                        <div class="contact-details">
+                            <h4>Facility</h4>
+                            <p>102-bed Multi-specialty Hospital<br>Advanced medical technology</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Schedule an Appointment</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service" style="width: 100%; padding: 1rem; border: 2px solid var(--primary-color); border-radius: 10px; font-size: 1rem; font-family: inherit; background: var(--cream);">
+                                <option value="">Select a service</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="gynecology">Gynecology & Obstetrics</option>
+                                <option value="general">General Medicine</option>
+                                <option value="surgery">Surgery</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your medical needs or any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit Appointment Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section class="emergency-section">
+        <div class="container">
+            <div class="emergency-card">
+                <h3>Emergency Contact</h3>
+                <p>For medical emergencies, please call our 24/7 emergency hotline or visit our hospital immediately.</p>
+                <div class="emergency-number">🚨 24/7 Emergency</div>
+                <p style="margin-bottom: 0;">Our emergency team is always ready to provide immediate medical attention and critical care services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="services.html">Pediatrics & Neonatology</a>
+                    <a href="services.html">Gynecology & Obstetrics</a>
+                    <a href="services.html">General Medicine</a>
+                    <a href="services.html">Surgery & Laparoscopy</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Tagarapuvalasa, Visakhapatnam<br>Andhra Pradesh, India<br>24/7 Emergency Services</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lakshmi Vijaya Medicare Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            
+            alert(`Thank you ${name}! Your appointment request has been received. We will contact you at ${phone} to confirm your appointment for ${service || 'the requested service'}. Our team will reach out within 24 hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

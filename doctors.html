@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Lakshmi Vijaya Medicare Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #f4e4d6;
+            --secondary-color: #e8d5c4;
+            --accent-color: #d4b896;
+            --text-dark: #5a4a3a;
+            --text-light: #8b7355;
+            --white: #ffffff;
+            --cream: #faf8f5;
+            --soft-pink: #f9f2ed;
+            --warm-beige: #ede0d3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(244, 228, 214, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+        }
+
+        .logo h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--primary-color) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .doctors-section {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .doctors-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .doctors-intro {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .team-message {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .team-message h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-message p {
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .specialties {
+            background: var(--white);
+            padding: 6rem 0;
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 184, 150, 0.15);
+        }
+
+        .specialty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialty-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .specialty-card p {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .contact-cta {
+            background: var(--soft-pink);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .contact-button {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-section a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(90, 74, 58, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .team-message {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/logo.jpeg" alt="Lakshmi Vijaya Medicare Hospital">
+                <h1>Lakshmi Vijaya Medicare</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html" class="active">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button" onclick="window.location.href='contact.html'">Schedule Visit</button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Doctors</h1>
+            <p class="page-subtitle">Expert healthcare professionals dedicated to your well-being</p>
+        </div>
+    </section>
+
+    <!-- Doctors Content -->
+    <section class="doctors-section">
+        <div class="container">
+            <div class="doctors-content">
+                <p class="doctors-intro">We take pride in our exceptional team of doctors who prioritize safety, comfort, and excellence in every aspect of patient care. Our healthcare professionals are committed to providing compassionate, personalized treatment for each patient.</p>
+                
+                <div class="team-message">
+                    <h3>Meet Our Dedicated Healthcare Team</h3>
+                    <p>Our medical staff consists of highly qualified and experienced doctors across multiple specialties. Each member of our team is committed to maintaining the highest standards of medical care while ensuring patient comfort and satisfaction.</p>
+                    <p>We believe in continuous learning and staying updated with the latest medical advancements to provide our patients with the best possible care. Our doctors work collaboratively to ensure comprehensive treatment plans tailored to individual patient needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Specialties -->
+    <section class="specialties">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 300; margin-bottom: 3rem; color: var(--text-dark);">Our Medical Specialties</h2>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">👶</div>
+                    <h3>Pediatrics & Neonatology</h3>
+                    <p>Specialized care for infants, children, and adolescents with advanced NICU and PICU facilities</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">👩‍⚕️</div>
+                    <h3>Gynecology & Obstetrics</h3>
+                    <p>Comprehensive women's healthcare including prenatal care, delivery, and gynecological treatments</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">🏥</div>
+                    <h3>General Medicine</h3>
+                    <p>Primary healthcare services for acute and chronic medical conditions with ICU support</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">⚕️</div>
+                    <h3>Surgery & Laparoscopy</h3>
+                    <p>Advanced surgical procedures including minimally invasive laparoscopic surgeries</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">🚨</div>
+                    <h3>Emergency Medicine</h3>
+                    <p>24/7 emergency care with immediate response and critical care capabilities</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-icon">🔬</div>
+                    <h3>Diagnostic Services</h3>
+                    <p>Advanced diagnostic capabilities with state-of-the-art medical equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h3>Schedule a Consultation</h3>
+            <p>Ready to meet with our healthcare professionals? Contact us to schedule an appointment or learn more about our medical services.</p>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="services.html">Pediatrics & Neonatology</a>
+                    <a href="services.html">Gynecology & Obstetrics</a>
+                    <a href="services.html">General Medicine</a>
+                    <a href="services.html">Surgery & Laparoscopy</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Tagarapuvalasa, Visakhapatnam<br>Andhra Pradesh, India<br>24/7 Emergency Services</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lakshmi Vijaya Medicare Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

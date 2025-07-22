@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lakshmi Vijaya Medicare Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #f4e4d6;
+            --secondary-color: #e8d5c4;
+            --accent-color: #d4b896;
+            --text-dark: #5a4a3a;
+            --text-light: #8b7355;
+            --white: #ffffff;
+            --cream: #faf8f5;
+            --soft-pink: #f9f2ed;
+            --warm-beige: #ede0d3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--cream);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(244, 228, 214, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+        }
+
+        .logo h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--primary-color) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-section {
+            padding: 6rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(212, 184, 150, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Features */
+        .features {
+            background: var(--white);
+            padding: 6rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-section a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(90, 74, 58, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/logo.jpeg" alt="Lakshmi Vijaya Medicare Hospital">
+                <h1>Lakshmi Vijaya Medicare</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button" onclick="window.location.href='contact.html'">Schedule Visit</button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Us</h1>
+            <p class="page-subtitle">Compassionate care with a family-first approach</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Lakshmi Vijaya Medicare Hospital, Tagarapuvalasa's trusted healthcare center for comprehensive, compassionate, and advanced medical care.</p>
+                    
+                    <p>Established in 2022, we are committed to offering world-class treatment with a focus on safety, comfort, and excellence. Our mission is to make quality healthcare affordable and accessible to all.</p>
+                    
+                    <p>Located in Tagarapuvalasa, Visakhapatnam, our 102-bed modern facility offers a wide range of services in obstetrics, gynecology, pediatrics, neonatology, general medicine, laparoscopy, and surgery.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop" alt="Hospital Building">
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop" alt="Medical Team">
+                </div>
+                <div class="about-text">
+                    <p>At Lakshmi Vijaya, we combine personalized attention, advanced technology, and a holistic approach to ensure the best outcomes for every patient.</p>
+                    
+                    <p>We are committed to patient-centered care, empowering families, and delivering safe, ethical, and affordable healthcare. Our skilled team and the latest medical technology ensure exceptional care for all our patients.</p>
+                    
+                    <p>Our vision is to be the leading healthcare provider in the region, known for our commitment to excellence, compassion, and innovation in medical care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 300; margin-bottom: 3rem; color: var(--text-dark);">Why Choose Us</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Modern Facility</h3>
+                    <p>102-bed facility with advanced medical technology and comfortable patient rooms</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Expert Team</h3>
+                    <p>Experienced doctors and healthcare professionals committed to excellence</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Patient-Centered</h3>
+                    <p>Personalized care with a family-first approach and individual attention</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🚨</div>
+                    <h3>24/7 Emergency</h3>
+                    <p>Round-the-clock emergency services with immediate medical attention</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Care</h3>
+                    <p>Quality healthcare at reasonable prices, accessible to all</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Excellence</h3>
+                    <p>Commitment to safety, comfort, and clinical excellence in all services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="doctors.html">Doctors</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="services.html">Pediatrics & Neonatology</a>
+                    <a href="services.html">Gynecology & Obstetrics</a>
+                    <a href="services.html">General Medicine</a>
+                    <a href="services.html">Surgery & Laparoscopy</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Tagarapuvalasa, Visakhapatnam<br>Andhra Pradesh, India<br>24/7 Emergency Services</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lakshmi Vijaya Medicare Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
